@@ -1,18 +1,17 @@
 void setup() {
   size(1000, 600);
     
+    background(200);
+
+for(int i = 1; i <= 30; i = i + 1) {
+fill((int) random(75,125), (int) random(75,125), (int) random(75,125));
+
+  building(i * 35, (int) random(200,600), (int) random(75,125), (int) random(2,5), (int) random(2,7), false);
+}
 }
 
 void draw() {
-  background(200);
   
-//build(500);
-//build(300);
-fill(100, 100, 100);
-building(200, 600, 100, 10, 8, false);
-fill(100, 100, 100);
-building(500, 600, 300, 10, 6, false);
-
 }
 
 void building(float xCenter, float yBottom, float w, int numFloors, int numWindows, boolean isDouble) {
@@ -22,15 +21,16 @@ float floorHeight = 50;
 float buildingHeight = numFloors * floorHeight;
 
 rect(xCenter, yBottom - buildingHeight / 2, w, numFloors * floorHeight);
-//while ()
+
 
   float xLeft = xCenter - w/2;  
-  //int numWindows = 2; 
-  fill(50, 50, 150); 
+  fill(26, 203, 255); 
   float step = w/(numWindows + 1);
-  float y = 1;
-  while(numWindows >= y) {
-    rect(xLeft + y * step, 500, step, step); 
-        y = y + 1;
+
+
+  for(float y = 1; y <= numWindows; y = y + 1)
+  {
+        rect(xLeft + y * step, yBottom - 50, step, step); 
+
   }
 }
