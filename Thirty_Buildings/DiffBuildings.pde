@@ -26,7 +26,10 @@ rect(xCenter, yBottom - buildingHeight / 2, w, numFloors * floorHeight);
   float xLeft = xCenter - w/2;  
   fill(26, 203, 255); 
   float step = w/(numWindows + 1);
-
+push();
+fill(80, 50, 19); 
+  rect(xCenter, yBottom -15, 15, 30);
+pop();
 
   for(float y = 1; y <= numWindows; y = y + 1)
   {
